@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,12 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -236,6 +230,18 @@
                   <li>
                     <a href="#delete-a-specific-report" class="toc-h2 toc-link" data-title="Delete a Specific Report">Delete a Specific Report</a>
                   </li>
+                  <li>
+                    <a href="#edite-a-specific-report" class="toc-h2 toc-link" data-title="Edite a Specific Report">Edite a Specific Report</a>
+                  </li>
+                  <li>
+                    <a href="#add-report" class="toc-h2 toc-link" data-title="Add Report">Add Report</a>
+                  </li>
+                  <li>
+                    <a href="#add-full-report" class="toc-h2 toc-link" data-title="Add Full Report">Add Full Report</a>
+                  </li>
+                  <li>
+                    <a href="#search" class="toc-h2 toc-link" data-title="Search">Search</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -243,8 +249,10 @@
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://viradev.ir/owncloud/index.php/apps/files/?dir=%2FGraphWorkspace'>Project OwnCloud</a></li>
+            <li><a href='http://gitlab.viradev.ir:6480/data-analysis/GraphVisualizer'>Project GitLab</a></li>
+            <li><a href='http://viradev.ir/jira/secure/RapidBoard.jspa?rapidView=54&view=detail&selectedIssue=GRPH-89'>Project Jira</a></li>
+            <li><p>Viratech</p></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -253,8 +261,10 @@
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the GraphVisualization API! You can use our API to access GraphVisualization API endpoints.</p>
 <h1 id='reports'>Reports</h1><h2 id='get-list-reports'>Get List Reports</h2>
+<p>This endpoint retrieves all reports in a same group.</p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
@@ -271,9 +281,7 @@
     </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all reports in a same group.</p>
-<h3 id='http-request'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request'>HTTP Request</h3>
 <p><code>GET http://example.com/api/report/items</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
@@ -308,8 +316,10 @@
 this method will give you light dto of reports.
 </aside>
 <h2 id='get-a-specific-report'>Get a Specific Report</h2>
+<p>This endpoint retrieves a specific Report.</p>
+
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
@@ -327,9 +337,7 @@ this method will give you light dto of reports.
   </span><span class="s2">"last_modifie"</span><span class="p">:</span><span class="w"> </span><span class="mi">1511349154435</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMAGE_HASH"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific Report.</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET http://example.com/api/report/items/{uid}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -375,10 +383,179 @@ this method will give you full dto of report.
 <aside class="success">
 this method return void.
 </aside>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+<h2 id='edite-a-specific-report'>Edite a Specific Report</h2>
+<p>This endpoint edite a specific Report.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST http://example.com/api/report/items/{uid}</code></p>
+<h3 id='body'>BODY</h3>
+<p>json that contain changes</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<blockquote>
+<p>POST Body JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"changed_name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chandeg_group_uid"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uid</td>
+<td>Required</td>
+<td></td>
+<td>report uid.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+this method return void.
+</aside>
+<h2 id='add-report'>Add Report</h2>
+<p>This endpoint add a new report.</p>
+
+<blockquote>
+<p>returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST http://example.com/api/report/items</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>group</td>
+<td>Required</td>
+<td></td>
+<td>group uid.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Required</td>
+<td></td>
+<td>report name.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+this method will add new report with current date.
+</aside>
+<h2 id='add-full-report'>Add Full Report</h2>
+<p>This endpoint add a new report.</p>
+
+<blockquote>
+<p>returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='body-2'>BODY</h3>
+<p>json that contain report data</p>
+
+<blockquote>
+<p>POST Body JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_102"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"username"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"zoom"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_607"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_202"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">331266643</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"create_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">1511349154435</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"last_modifie"</span><span class="p">:</span><span class="w"> </span><span class="mi">1511349154435</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IMAGE_HASH"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST http://example.com/api/report/items</code></p>
+
+<aside class="success">
+this method will add the report.
+</aside>
+<h2 id='search'>Search</h2>
+<p>This endpoint search in reports(on name field only).</p>
+
+<blockquote>
+<p>returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matched_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"matched_name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_120"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://example.com/api/report/search</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>query</td>
+<td>Required</td>
+<td></td>
+<td>a simple string to search in name field.</td>
+</tr>
+<tr>
+<td>start</td>
+<td>Optional</td>
+<td>1</td>
+<td>page number.</td>
+</tr>
+<tr>
+<td>len</td>
+<td>Optional</td>
+<td>-1</td>
+<td>page size. set -1 to get all</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+this method will give you light dto of reports.
+</aside>
+<h1 id='errors'>Errors</h1>
+<p>The Graph API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -434,12 +611,6 @@ this method return void.
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
