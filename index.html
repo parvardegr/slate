@@ -245,6 +245,31 @@
               </ul>
           </li>
           <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-current-report" class="toc-h2 toc-link" data-title="Get Current Report">Get Current Report</a>
+                  </li>
+                  <li>
+                    <a href="#set-current-report" class="toc-h2 toc-link" data-title="Set Current Report">Set Current Report</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#providers" class="toc-h1 toc-link" data-title="Providers">Providers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-list-providers" class="toc-h2 toc-link" data-title="Get List Providers">Get List Providers</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-provider" class="toc-h2 toc-link" data-title="Get a Specific Provider">Get a Specific Provider</a>
+                  </li>
+                  <li>
+                    <a href="#change-state-of-a-specific-provider-enable-and-disable" class="toc-h2 toc-link" data-title="Change State of a Specific Provider(enable and disable)">Change State of a Specific Provider(enable and disable)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </div>
@@ -554,7 +579,50 @@ this method will add the report.
 <aside class="success">
 this method will give you light dto of reports.
 </aside>
-<h1 id='errors'>Errors</h1>
+<h1 id='users'>Users</h1><h2 id='get-current-report'>Get Current Report</h2>
+<p>This endpoint retrieves current report of the user.</p>
+
+<blockquote>
+<p>returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"report name"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"extuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uid_019"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nodes_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"edges_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image_hash"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://example.com/api/user/current_report</code></p>
+
+<aside class="success">
+this method will give you light dto of user current report.
+</aside>
+<h2 id='set-current-report'>Set Current Report</h2>
+<p>This endpoint change current report of the user.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST http://example.com/api/user/current_report/{uid}</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>uid</td>
+<td>Required</td>
+<td></td>
+<td>report uid.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+this method will return nothing.
+</aside>
+<h1 id='providers'>Providers</h1><h2 id='get-list-providers'>Get List Providers</h2><h2 id='get-a-specific-provider'>Get a Specific Provider</h2><h2 id='change-state-of-a-specific-provider-enable-and-disable'>Change State of a Specific Provider(enable and disable)</h2><h1 id='errors'>Errors</h1>
 <p>The Graph API uses the following error codes:</p>
 
 <table><thead>
